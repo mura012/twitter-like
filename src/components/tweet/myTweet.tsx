@@ -44,7 +44,6 @@ export const MyTweet = () => {
       {tweet
         .filter((item: Tweet) => item.email === user?.email)
         .map((item: Tweet) => {
-          console.log(item);
           return (
             <li
               key={item.Timestamp.nanoseconds}
