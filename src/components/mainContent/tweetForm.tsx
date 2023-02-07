@@ -25,8 +25,8 @@ export const TweetForm = () => {
       <form
         className="border-solid border-0 border-b border-gray-500 pb-6 relative pl-2"
         onSubmit={(e) => e.preventDefault()}
-        action="/form"
         autoComplete="off"
+        action="form"
       >
         <label className="flex">
           <CurrentUserPhotoURL />

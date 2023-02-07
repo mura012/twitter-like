@@ -1,5 +1,6 @@
 import { SignOutButton } from "@/components/auth/signOutButton";
 import { MainContentTitle } from "@/components/mainContent/mainContentTitle";
+import { MyTweet } from "@/components/tweet/myTweet";
 import { Layout } from "@/layout";
 import { auth } from "@/libs/firebase";
 import Image from "next/image";
@@ -10,7 +11,7 @@ const myPage = () => {
   const [user] = useAuthState(auth);
   return (
     <Layout title="マイページ">
-      <div>
+      <div className="border-0 border-solid border-b  border-gray-400">
         <MainContentTitle title="マイページ" />
         {user && user.photoURL ? (
           <div className="flex ml-3">
@@ -24,10 +25,11 @@ const myPage = () => {
             <p>{user.displayName}</p>
           </div>
         ) : null}
-        <div className="text-end mr-4">
+        <div className="text-end mr-4 mb-2">
           <SignOutButton />
         </div>
       </div>
+      <MyTweet />
     </Layout>
   );
 };
